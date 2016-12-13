@@ -1,0 +1,19 @@
+<nav class="navbar navbar-default" role="navigation" ng-controller="navbarController as vm">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#top-nav">
+        <span class="sr-only">Toggle Navigation</span>
+      </button>
+      <a class="navbar-brand" href="/">Dang</a>
+    </div>
+    <div class="collapse navbar-collapse" id="top-nav">
+      <ul class="nav navbar-nav pull-right">
+        <li ng-show="vm.isAuthenticated"><a href="/[[ vm.user.username ]]">[[ vm.user.username ]]</a></li>
+        <li ng-show="vm.isAuthenticated"><a href="/[[ vm.user.username ]]/settings">Settings</a></li>
+        <li ng-show="vm.isAuthenticated"><a href="javascript:void(0)" ng-click="vm.logout()">Logout</a></li>
+        <li ng-hide="vm.isAuthenticated"><a href="/#/login">Login</a></li>
+        <li ng-hide="vm.isAuthenticated"><a href="/#/register">Register</a></li>
+      </ul>
+    </div>
+  </div>
+</nav>
